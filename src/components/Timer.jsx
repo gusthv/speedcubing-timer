@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { Time } from "../components";
+import { Time, InlineStatistics } from "../components";
 import { Context } from "../App";
 
 const Timer = () => {
