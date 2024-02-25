@@ -12,20 +12,20 @@ const Solves = () => {
     JSON.parse(localStorage.getItem("scrambles")) || []
   );
 
-  const clearLocal = () => {
-    localStorage.removeItem("solves");
-    localStorage.removeItem("scrambles");
-    localStorage.removeItem("Ao5");
-    localStorage.removeItem("Ao12");
-    localStorage.removeItem("Ao50");
-    localStorage.removeItem("Ao100");
-  };
+  // const clearLocal = () => {
+  //   localStorage.removeItem("solves");
+  //   localStorage.removeItem("scrambles");
+  //   localStorage.removeItem("Ao5");
+  //   localStorage.removeItem("Ao12");
+  //   localStorage.removeItem("Ao50");
+  //   localStorage.removeItem("Ao100");
+  // };
 
-  const clearAll = () => {
-    clearLocal();
-    setScrambles([]);
-    setSolves([]);
-  };
+  // const clearAll = () => {
+  //   clearLocal();
+  //   setScrambles([]);
+  //   setSolves([]);
+  // };
 
   const deleteSolve = (index) => {
     const updatedSolves = solves.slice().reverse();
@@ -42,10 +42,12 @@ const Solves = () => {
 
   return (
     <div>
-      <div className="w-full hidden md:flex flex-col justify-center items-center mx-auto mt-[18px] pb-[18px] gap-[18px]">
+      <div
+        className={`w-full flex flex-col justify-center items-center mx-auto mt-[18px] pb-[18px] gap-[18px]`}
+      >
         <div className="md:w-[600px]">
           <span
-            className={`flex flex-row ${
+            className={`${solves == [] ? "flex" : "hidden"} flex-row ${
               !darkMode ? "text-accent_light" : "text-accent_dark"
             } font-bold`}
           >
@@ -82,18 +84,6 @@ const Solves = () => {
               </div>
             ))}
         </div>
-      </div>
-      <div
-        className="w-screen md:hidden fixed flex items-center justify-center"
-        style={{ height: "calc(100vh - 60px)" }}
-      >
-        <p
-          className={`text-[64px] ${
-            !darkMode ? "text-accent_light" : "text-accent_dark"
-          }`}
-        >
-          IN PROGRESS
-        </p>
       </div>
     </div>
   );
