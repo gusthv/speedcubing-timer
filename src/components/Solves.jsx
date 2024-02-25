@@ -12,20 +12,20 @@ const Solves = () => {
     JSON.parse(localStorage.getItem("scrambles")) || []
   );
 
-  // const clearLocal = () => {
-  //   localStorage.removeItem("solves");
-  //   localStorage.removeItem("scrambles");
-  //   localStorage.removeItem("Ao5");
-  //   localStorage.removeItem("Ao12");
-  //   localStorage.removeItem("Ao50");
-  //   localStorage.removeItem("Ao100");
-  // };
+  const clearLocal = () => {
+    localStorage.removeItem("solves");
+    localStorage.removeItem("scrambles");
+    localStorage.removeItem("Ao5");
+    localStorage.removeItem("Ao12");
+    localStorage.removeItem("Ao50");
+    localStorage.removeItem("Ao100");
+  };
 
-  // const clearAll = () => {
-  //   clearLocal();
-  //   setScrambles([]);
-  //   setSolves([]);
-  // };
+  const clearAll = () => {
+    clearLocal();
+    setScrambles([]);
+    setSolves([]);
+  };
 
   const deleteSolve = (index) => {
     const updatedSolves = solves.slice().reverse();
@@ -43,22 +43,36 @@ const Solves = () => {
   return (
     <div>
       <div
-        className={`w-full flex flex-col justify-center items-center mx-auto mt-[18px] pb-[18px] gap-[18px]`}
+        className={`w-full hidden md:flex flex-col justify-center items-center mx-auto mt-[18px] pb-[18px] gap-[18px]`}
       >
         <div className="md:w-[600px]">
           <span
-            className={`${solves == [] ? "hidden" : "flex"} flex-row ${
-              !darkMode ? "text-accent_light" : "text-accent_dark"
-            } font-bold`}
+            className={`w-full ${
+              solves[0] ? "flex" : "hidden"
+            } flex-row justify-between items-center font-bold`}
           >
-            <p className="w-[10%]">TIME</p>
-            <p>SCRAMBLE</p>
+            <span
+              className={`flex flex-row ${
+                !darkMode ? "text-accent_light" : "text-accent_dark"
+              }`}
+            >
+              <p className="">TIME</p>
+              <p className="ml-[20px]">SCRAMBLE</p>
+            </span>
+            <p
+              onClick={() => clearAll()}
+              className={`mr-[50px] ${
+                !darkMode ? "hover:text-accent_light" : "hover:text-accent_dark"
+              } cursor-pointer`}
+            >
+              CLEAR
+            </p>
           </span>
           {solves
             .slice()
             .reverse()
             .map((solve, index) => (
-              <div key={index} className="hidden md:flex flex-row">
+              <div key={index} className="flex flex-row">
                 <p
                   className={`md:w-[10%] ${
                     !darkMode ? "text-accent_light" : "text-accent_dark"
