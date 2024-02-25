@@ -47,7 +47,7 @@ const Solves = () => {
       >
         <div className="md:w-[600px]">
           <span
-            className={`${solves == [] ? "flex" : "hidden"} flex-row ${
+            className={`${solves == [] ? "hidden" : "flex"} flex-row ${
               !darkMode ? "text-accent_light" : "text-accent_dark"
             } font-bold`}
           >
