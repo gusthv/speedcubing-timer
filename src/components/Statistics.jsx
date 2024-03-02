@@ -107,7 +107,7 @@ const Statistics = () => {
   ];
 
   return (
-    <div className="max-w-xl flex flex-col items-center mx-auto mt-[18px] pb-[18px] gap-[18px]">
+    <div className="max-w-xl flex flex-col items-center mx-auto mt-[52px] pb-[52px] gap-[18px]">
       {sections.map((section, index) => (
         <section
           key={index}

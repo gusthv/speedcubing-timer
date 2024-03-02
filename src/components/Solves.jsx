@@ -43,25 +43,25 @@ const Solves = () => {
   return (
     <div>
       <div
-        className={`w-full hidden md:flex flex-col justify-center items-center mx-auto mt-[18px] pb-[18px] gap-[18px]`}
+        className={`w-full flex md:flex flex-col justify-center items-center mx-auto mt-[36px] pb-[52px] gap-[18px]`}
       >
-        <div className="md:w-[600px]">
+        <div className="w-[90%] md:w-[600px]">
           <span
             className={`w-full ${
               solves[0] ? "flex" : "hidden"
             } flex-row justify-between items-center font-bold`}
           >
             <span
-              className={`flex flex-row ${
+              className={`flex flex-col md:flex-row ${
                 !darkMode ? "text-accent_light" : "text-accent_dark"
               }`}
             >
-              <p className="">TIME</p>
-              <p className="ml-[20px]">SCRAMBLE</p>
+              <p className="hidden md:flex">TIME</p>
+              <p className="hidden md:flex md:ml-[20px]">SCRAMBLE</p>
             </span>
             <p
               onClick={() => clearAll()}
-              className={`mr-[50px] ${
+              className={`${
                 !darkMode ? "hover:text-accent_light" : "hover:text-accent_dark"
               } cursor-pointer`}
             >
@@ -72,18 +72,29 @@ const Solves = () => {
             .slice()
             .reverse()
             .map((solve, index) => (
-              <div key={index} className="flex flex-row">
-                <p
-                  className={`md:w-[10%] ${
-                    !darkMode ? "text-accent_light" : "text-accent_dark"
+              <div key={index} className="flex flex-row mb-[4px]">
+                <span
+                  className={`w-full flex flex-col md:flex-row divide-y md:divide-none ${
+                    !darkMode ? "divide-accent_light" : "divide-accent_dark"
                   }`}
                 >
-                  {<Time value={solve} />}
-                </p>
-                <p className="md:w-[80%]">
-                  {scrambles[solves.length - 1 - index]}
-                </p>
-                <span className="">
+                  <p
+                    className={`md:w-[10%] ${
+                      !darkMode ? "text-accent_light" : "text-accent_dark"
+                    }`}
+                  >
+                    {<Time value={solve} />}
+                  </p>
+                  <p className="md:w-[80%] text-[14px] md:text-[16px]">
+                    {scrambles[solves.length - 1 - index]}
+                  </p>
+                  {/* <hr
+                    className={`w-full flex md:hidden ${
+                      !darkMode ? "text-accent_light" : "text-accent_dark"
+                    }`}
+                  /> */}
+                </span>
+                <span>
                   <p
                     onClick={() => deleteSolve(index)}
                     className={`md:w-[10%] ${
