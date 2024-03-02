@@ -72,7 +72,17 @@ const Solves = () => {
             .slice()
             .reverse()
             .map((solve, index) => (
-              <div key={index} className="flex flex-row mb-[4px]">
+              <div key={index} className="flex flex-row items-center mb-[4px]">
+                <p
+                  onClick={() => deleteSolve(index)}
+                  className={`flex md:hidden mr-[8px] ${
+                    !darkMode
+                      ? "hover:text-accent_light"
+                      : "hover:text-accent_dark"
+                  } text-[24px] cursor-pointer`}
+                >
+                  X
+                </p>
                 <span
                   className={`w-full flex flex-col md:flex-row divide-y md:divide-none ${
                     !darkMode ? "divide-accent_light" : "divide-accent_dark"
@@ -88,16 +98,11 @@ const Solves = () => {
                   <p className="md:w-[80%] text-[14px] md:text-[16px]">
                     {scrambles[solves.length - 1 - index]}
                   </p>
-                  {/* <hr
-                    className={`w-full flex md:hidden ${
-                      !darkMode ? "text-accent_light" : "text-accent_dark"
-                    }`}
-                  /> */}
                 </span>
                 <span>
                   <p
                     onClick={() => deleteSolve(index)}
-                    className={`md:w-[10%] ${
+                    className={`hidden md:w-[10%] md:flex ${
                       !darkMode
                         ? "hover:text-accent_light"
                         : "hover:text-accent_dark"
