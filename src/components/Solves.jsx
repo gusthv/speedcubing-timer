@@ -74,6 +74,7 @@ const Solves = () => {
             .map((solve, index) => (
               <div key={index} className="flex flex-row items-center mb-[4px]">
                 <svg
+                  onClick={() => deleteSolve(index)}
                   className={`w-6 h-6 flex md:hidden mr-[8px] ${
                     !darkMode ? "fill-accent_light" : "fill-accent_dark"
                   } hover:fill-white cursor-pointer`}
