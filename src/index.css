@@ -1,3 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.RubikFont {
+  font-family: "Rubik", sans-serif;
+}
+
+.TimerFont {
+  font-family: "JetBrains Mono", monospace;
+}

@@ -16,7 +16,7 @@ const App = () => {
   return (
     <Context.Provider value={[darkMode, setDarkMode]}>
       <div
-        className={`min-h-screen flex flex-col pt-[60px] ${
+        className={`min-h-screen flex flex-col pt-[60px] RubikFont ${
           !darkMode ? "bg-bg_light text-black" : "bg-bg_dark text-white"
         }`}
       >

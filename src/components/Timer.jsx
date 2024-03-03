@@ -229,7 +229,11 @@ const Timer = () => {
     >
       <section className="w-screen fixed flex left-0 justify-center items-center text-[122px]">
         <div className={`${threshold || step === 2 ? "visible" : "hidden"}`}>
-          <p className={`${threshold ? "visible" : "hidden"} text-[#00ff00]`}>
+          <p
+            className={`${
+              threshold ? "visible" : "hidden"
+            } text-[#00ff00] TimerFont`}
+          >
             0.00
           </p>
           <p className={`${!threshold ? "visible" : "hidden"}`}>
@@ -268,7 +272,7 @@ const Timer = () => {
                     </div>
                   );
                 } else {
-                  return <div>0.00</div>;
+                  return <div className="TimerFont">0.00</div>;
                 }
               })()}
             </div>
@@ -277,11 +281,17 @@ const Timer = () => {
                 threshold || step === 2 ? "hidden" : "visible"
               } text-[104px] drop-shadow-2xl`}
             >
-              <p className={`${step === 1 ? "visible" : "hidden"} text-[red]`}>
+              <p
+                className={`${
+                  step === 1 ? "visible" : "hidden"
+                } text-[red] TimerFont`}
+              >
                 0.00
               </p>
               <div className={`${step === 1 ? "hidden" : "visible"}`}>
-                <p className={`${previousTime ? "visible" : "hidden"}`}>
+                <p
+                  className={`${previousTime ? "visible" : "hidden"} TimerFont`}
+                >
                   <Time
                     value={
                       previousTime === solves[solves.length]
@@ -292,7 +302,11 @@ const Timer = () => {
                     }
                   />
                 </p>
-                <p className={`${previousTime ? "hidden" : "visible"}`}>0.00</p>
+                <p
+                  className={`${previousTime ? "hidden" : "visible"} TimerFont`}
+                >
+                  0.00
+                </p>
               </div>
             </div>
             <div className={`${threshold ? "visible" : "hidden"} text-[104px]`}>
@@ -302,7 +316,7 @@ const Timer = () => {
               <p
                 className={`${
                   step === 2 ? "hidden" : "visible"
-                } text-[#00ff00]`}
+                } text-[#00ff00] TimerFont`}
               >
                 0.00
               </p>
