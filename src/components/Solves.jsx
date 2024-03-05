@@ -57,7 +57,7 @@ const Solves = () => {
               }`}
             >
               <p className="hidden md:flex">TIME</p>
-              <p className="hidden md:flex md:ml-[20px]">SCRAMBLE</p>
+              <p className="hidden md:flex ml-[22%]">SCRAMBLE</p>
             </span>
             <p
               onClick={() => clearAll()}
@@ -72,29 +72,32 @@ const Solves = () => {
             .slice()
             .reverse()
             .map((solve, index) => (
-              <div key={index} className="flex flex-row mb-[4px]">
+              <div
+                key={index}
+                className="flex flex-row-reverse md:flex-row gap-2 mb-[4px]"
+              >
                 <span
                   className={`w-full flex flex-col md:flex-row divide-y md:divide-none ${
                     !darkMode ? "divide-accent_light" : "divide-accent_dark"
                   }`}
                 >
                   <p
-                    className={`md:w-[10%] text-[22px] md:text-[16px] ${
+                    className={`md:w-[12%] text-[22px] md:text-[16px] ${
                       !darkMode ? "text-accent_light" : "text-accent_dark"
                     }`}
                   >
                     {<Time value={solve} />}
                   </p>
-                  <p className="md:w-[80%] text-[14px] md:text-[16px]">
+                  <p className="md:w-[78%] text-[14px] md:text-[16px]">
                     {scrambles[solves.length - 1 - index]}
                   </p>
                 </span>
                 <span>
                   <svg
                     onClick={() => deleteSolve(index)}
-                    className={`w-6 h-6 flex ${
+                    className={`w-6 h-8 md:h-6 flex ${
                       !darkMode ? "fill-accent_light" : "fill-accent_dark"
-                    } hover:fill-white object-contain cursor-pointer`}
+                    } hover:fill-white cursor-pointer`}
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
