@@ -96,7 +96,9 @@ const Solves = () => {
                   <svg
                     onClick={() => deleteSolve(index)}
                     className={`w-5 h-8 md:h-6 flex ${
-                      !darkMode ? "fill-accent_light" : "fill-accent_dark"
+                      !darkMode
+                        ? "hover:fill-accent_light"
+                        : "hover:fill-accent_dark fill-white"
                     } hover:fill-white cursor-pointer`}
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
