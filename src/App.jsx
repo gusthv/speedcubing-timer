@@ -6,7 +6,7 @@ export const Context = React.createContext();
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(
-    JSON.parse(localStorage.getItem("darkMode")) || true
+    JSON.parse(localStorage.getItem("darkMode")) || false
   );
 
   useEffect(() => {
