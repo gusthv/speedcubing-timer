@@ -327,7 +327,7 @@ const Timer = () => {
               <span className="w-1/3 rounded-xl">
                 <p>{averages.Ao5 ? <Time value={averages.Ao5} /> : "-"}</p>
                 <p
-                  className={`rounded-b-2xl shadow-xl ${
+                  className={`rounded-b-2xl shadow-xl shadow-[#6bcef226] ${
                     !darkMode ? "text-accent_light" : "text-accent_dark"
                   }`}
                 >
@@ -351,7 +351,7 @@ const Timer = () => {
                   }
                 })()}
                 <p
-                  className={`rounded-b-2xl shadow-xl ${
+                  className={`rounded-b-2xl shadow-xl shadow-[#6bcef226] ${
                     !darkMode ? "text-accent_light" : "text-accent_dark"
                   }`}
                 >
@@ -361,7 +361,7 @@ const Timer = () => {
               <span className={`w-1/3 rounded-xl`}>
                 <p>{averages.Ao12 ? <Time value={averages.Ao12} /> : "-"}</p>
                 <p
-                  className={`rounded-b-2xl shadow-xl ${
+                  className={`rounded-b-2xl shadow-xl shadow-[#6bcef226] ${
                     !darkMode ? "text-accent_light" : "text-accent_dark"
                   }`}
                 >

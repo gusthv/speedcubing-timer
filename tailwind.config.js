@@ -4,12 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg_light: "#E9EBEE",
-        bg_dark: "#211F37",
-        navbar_light: "#EFECFD",
-        navbar_dark: "#2B2744",
-        accent_light: "#938ef5",
-        accent_dark: "#7C5CFF",
+        bg_light: "#EDEDED",
+        bg_dark: "#242526",
+        navbar_light: "#DEDEDE",
+        navbar_dark: "#18191A",
+        accent_light: "#6BCEF2",
+        accent_dark: "#6BCEF2",
       },
     },
   },

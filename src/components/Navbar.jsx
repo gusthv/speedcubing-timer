@@ -19,12 +19,12 @@ const Navbar = () => {
           <Link
             key={link.url}
             to={link.url}
-            className={`w-1/3 border-b-[4px] py-[14px] mt-[4px] ${
+            className={`w-1/3 border-b-[4px] py-[14px] mt-[4px] transition-all ${
               link.url === location
                 ? !darkMode
-                  ? "text-black border-accent_light hover:border-accent_light"
-                  : "text-white border-accent_dark hover:border-accent_dark"
-                : "border-transparent hover:border-[#bbbbbb]"
+                  ? "text-black border-accent_light hover:border-accent_light shadow-[rgba(107,_206,_242,_0.99)_0px_15px_15px_-20px]"
+                  : "text-white border-accent_dark hover:border-accent_dark shadow-[rgba(107,_206,_242,_0.99)_0px_15px_15px_-20px]"
+                : "border-transparent hover:border-[#6bcef254]"
             }`}
           >
             {link.title}

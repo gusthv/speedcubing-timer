@@ -32,7 +32,8 @@ const Graph = (values) => {
         <Line
           type="monotone"
           dataKey="time"
-          stroke={!darkMode ? "#C2BFF8" : "#7C5CFF"}
+          stroke={!darkMode ? "#6BCEF2" : "#6BCEF2"}
+          dot={false}
         />
       </LineChart>
     </>
