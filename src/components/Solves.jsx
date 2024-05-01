@@ -43,7 +43,7 @@ const Solves = () => {
   return (
     <div>
       <div
-        className={`w-full flex md:flex flex-col justify-center items-center mx-auto mt-[36px] pb-[52px] gap-[18px]`}
+        className={`w-full flex md:flex flex-col justify-center items-center mx-auto mt-[36px] pb-[36px] gap-[18px]`}
       >
         <div className="w-[90%] md:w-[600px]">
           <span
