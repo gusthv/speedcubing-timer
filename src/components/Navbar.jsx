@@ -34,7 +34,7 @@ const Navbar = () => {
       <img
         src={!darkMode ? sunIcon : moonIcon}
         onClick={() => setDarkMode(!darkMode)}
-        className="w-6 h-6 absolute right-0 mr-[24px] cursor-pointer"
+        className="w-6 h-6 absolute right-0 mr-[24px] cursor-pointer select-none"
         alt="theme-icon"
       />
     </nav>

@@ -329,7 +329,7 @@ const Timer = () => {
                 <p
                   className={`rounded-b-2xl shadow-xl shadow-[#6bcef226] ${
                     !darkMode ? "text-accent_light" : "text-accent_dark"
-                  }`}
+                  } select-none`}
                 >
                   Ao5
                 </p>
@@ -353,7 +353,7 @@ const Timer = () => {
                 <p
                   className={`rounded-b-2xl shadow-xl shadow-[#6bcef226] ${
                     !darkMode ? "text-accent_light" : "text-accent_dark"
-                  }`}
+                  } select-none`}
                 >
                   PREVIOUS
                 </p>
@@ -363,7 +363,7 @@ const Timer = () => {
                 <p
                   className={`rounded-b-2xl shadow-xl shadow-[#6bcef226] ${
                     !darkMode ? "text-accent_light" : "text-accent_dark"
-                  }`}
+                  } select-none`}
                 >
                   Ao12
                 </p>
