@@ -19,7 +19,7 @@ const Navbar = () => {
           <Link
             key={link.url}
             to={link.url}
-            className={`w-1/3 border-b-[4px] py-[14px] mt-[4px] transition-all ${
+            className={`w-1/3 border-b-[4px] py-[14px] mt-[4px] transition-all select-none ${
               link.url === location
                 ? !darkMode
                   ? "text-black border-accent_light hover:border-accent_light shadow-[rgba(107,_206,_242,_0.99)_0px_15px_15px_-20px]"
