@@ -24,7 +24,7 @@ const Navbar = () => {
                 ? !darkMode
                   ? "text-black border-accent_light hover:border-accent_light shadow-[rgba(107,_206,_242,_0.99)_0px_15px_15px_-20px]"
                   : "text-white border-accent_dark hover:border-accent_dark shadow-[rgba(107,_206,_242,_0.99)_0px_15px_15px_-20px]"
-                : "border-transparent hover:border-[#6bcef254]"
+                : "border-transparent hover:border-[#6bcef254] hover:shadow-[rgba(107,_206,_242,_0.99)_0px_15px_15px_-20px]"
             }`}
           >
             {link.title}
