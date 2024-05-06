@@ -136,7 +136,9 @@ const Statistics = () => {
               )}
             </p>
           </span>
-          <Graph solves={section.solves.solves} width={360} height={220} />
+          <span className="shadow-2xl shadow-[#6bcef226]">
+            <Graph solves={section.solves.solves} width={360} height={220} />
+          </span>
         </section>
       ))}
     </div>

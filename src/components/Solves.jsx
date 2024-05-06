@@ -52,7 +52,7 @@ const Solves = () => {
             } flex-row justify-between items-center font-bold`}
           >
             <span
-              className={`flex flex-col md:flex-row ${
+              className={`flex flex-col md:flex-row select-none ${
                 !darkMode ? "text-accent_light" : "text-accent_dark"
               }`}
             >
@@ -63,7 +63,7 @@ const Solves = () => {
               onClick={() => clearAll()}
               className={`${
                 !darkMode ? "hover:text-accent_light" : "hover:text-accent_dark"
-              } cursor-pointer`}
+              } cursor-pointer select-none`}
             >
               CLEAR
             </p>
