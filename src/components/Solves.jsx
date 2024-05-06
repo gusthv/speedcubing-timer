@@ -52,12 +52,12 @@ const Solves = () => {
             } flex-row justify-between items-center font-bold`}
           >
             <span
-              className={`flex flex-col md:flex-row select-none ${
+              className={`flex flex-col md:flex-row ${
                 !darkMode ? "text-accent_light" : "text-accent_dark"
-              }`}
+              } select-none`}
             >
               <p className="hidden md:flex">TIME</p>
-              <p className="hidden md:flex ml-[22%]">SCRAMBLE</p>
+              <p className="hidden md:flex ml-[32%]">SCRAMBLE</p>
             </span>
             <p
               onClick={() => clearAll()}
@@ -82,7 +82,7 @@ const Solves = () => {
                   }`}
                 >
                   <p
-                    className={`md:w-[12%] text-[22px] md:text-[16px] ${
+                    className={`md:w-[14%] text-[22px] md:text-[16px] ${
                       !darkMode ? "text-accent_light" : "text-accent_dark"
                     }`}
                   >
