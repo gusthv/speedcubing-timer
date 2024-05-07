@@ -1,5 +1,11 @@
 import { useContext } from "react";
-import { CartesianGrid, LineChart, Line, Tooltip } from "recharts";
+import {
+  ResponsiveContainer,
+  CartesianGrid,
+  LineChart,
+  Line,
+  Tooltip,
+} from "recharts";
 import { Time } from "../../components";
 import { Context } from "../../App";
 
@@ -22,20 +28,18 @@ const Graph = (values) => {
   const [darkMode] = useContext(Context);
   return (
     <>
-      <LineChart
-        width={values.width}
-        height={values.height}
-        data={values.solves}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <Tooltip content={<CustomTooltip />} />
-        <Line
-          type="monotone"
-          dataKey="time"
-          stroke={!darkMode ? "#6BCEF2" : "#6BCEF2"}
-          dot={false}
-        />
-      </LineChart>
+      <ResponsiveContainer width={values.width} height={values.height}>
+        <LineChart width="100%" height="100%" data={values.solves}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <Tooltip content={<CustomTooltip />} />
+          <Line
+            type="monotone"
+            dataKey="time"
+            stroke={!darkMode ? "#6BCEF2" : "#6BCEF2"}
+            dot={false}
+          />
+        </LineChart>
+      </ResponsiveContainer>
     </>
   );
 };
