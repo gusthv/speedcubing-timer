@@ -137,7 +137,12 @@ const Statistics = () => {
             </p>
           </span>
           <span className="shadow-2xl shadow-[#6bcef226]">
-            <Graph solves={section.solves.solves} width={360} height={220} />
+            <Graph
+              solves={section.solves.solves}
+              width={360}
+              height={220}
+              type={!index ? "linear" : "monotone"}
+            />
           </span>
         </section>
       ))}

@@ -33,7 +33,7 @@ const Graph = (values) => {
           <CartesianGrid strokeDasharray="3 3" />
           <Tooltip content={<CustomTooltip />} />
           <Line
-            type="monotone"
+            type={values.type}
             dataKey="time"
             stroke={!darkMode ? "#6BCEF2" : "#6BCEF2"}
             dot={false}
