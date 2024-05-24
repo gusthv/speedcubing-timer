@@ -242,9 +242,9 @@ const Timer = () => {
         </div>
         <div className={`${threshold || step === 2 ? "hidden" : "visible"}`}>
           <p
-            className={`max-w-xl px-16 text-[22px] text-center ${
+            className={`max-w-xl px-16 text-[22px] ${
               !darkMode ? "text-accent_light" : "text-accent_dark"
-            }`}
+            } text-center`}
           >
             {scramble}
           </p>
@@ -252,7 +252,7 @@ const Timer = () => {
             <div
               className={`${
                 previousTime ? "visible" : "hidden"
-              } absolute mt-[2px] ml-[260px] text-[20px]`}
+              } absolute mt-[2px] ml-[260px] text-[20px] TimerFont`}
             >
               {(() => {
                 if (solves.length < 2) return null;
@@ -272,14 +272,14 @@ const Timer = () => {
                     </div>
                   );
                 } else {
-                  return <div className="TimerFont">0.00</div>;
+                  return <div>0.00</div>;
                 }
               })()}
             </div>
             <div
               className={`${
                 threshold || step === 2 ? "hidden" : "visible"
-              } text-[104px] drop-shadow-2xl`}
+              } text-[104px]`}
             >
               <p
                 className={`${
@@ -323,18 +323,16 @@ const Timer = () => {
             </div>
           </div>
           <div className="flex justify-center text-[18px]">
-            <div className="w-[320px] flex flex-row justify-between gap-4 text-center">
-              <span className="w-1/3 rounded-xl">
+            <div className={`w-[320px] flex flex-row justify-between rounded-b-3xl shadow-xl shadow-[#6bcef226] ${!darkMode ? "text-accent_light" : "text-accent_dark"} text-center`}>
+              <span className="w-1/3">
                 <p>{averages.Ao5 ? <Time value={averages.Ao5} /> : "-"}</p>
                 <p
-                  className={`rounded-b-2xl shadow-xl shadow-[#6bcef226] ${
-                    !darkMode ? "text-accent_light" : "text-accent_dark"
-                  } select-none`}
+                  className="select-none"
                 >
                   Ao5
                 </p>
               </span>
-              <span className={`w-1/3 rounded-xl`}>
+              <span className="w-1/3">
                 {(() => {
                   if (previousTime === null) {
                     if (solves[solves.length - 1] == null) {
@@ -351,19 +349,15 @@ const Timer = () => {
                   }
                 })()}
                 <p
-                  className={`rounded-b-2xl shadow-xl shadow-[#6bcef226] ${
-                    !darkMode ? "text-accent_light" : "text-accent_dark"
-                  } select-none`}
+                  className="select-none"
                 >
                   PREVIOUS
                 </p>
               </span>
-              <span className={`w-1/3 rounded-xl`}>
+              <span className="w-1/3">
                 <p>{averages.Ao12 ? <Time value={averages.Ao12} /> : "-"}</p>
                 <p
-                  className={`rounded-b-2xl shadow-xl shadow-[#6bcef226] ${
-                    !darkMode ? "text-accent_light" : "text-accent_dark"
-                  } select-none`}
+                  className="select-none"
                 >
                   Ao12
                 </p>

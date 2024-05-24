@@ -41,7 +41,6 @@ const Solves = () => {
   };
 
   return (
-    <div>
       <div
         className={`w-full flex md:flex flex-col justify-center items-center mx-auto mt-[36px] pb-[36px] gap-[18px]`}
       >
@@ -111,7 +110,6 @@ const Solves = () => {
             ))}
         </div>
       </div>
-    </div>
   );
 };
 
