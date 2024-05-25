@@ -32,7 +32,7 @@ const Algorithms = () => {
             selected == true ? "border-accent_dark" : "border-transparent"
           }`}
         >
-          2-LOOK PLL
+          2-LOOK OLL
         </p>
         {"/"}
         <p
@@ -40,7 +40,7 @@ const Algorithms = () => {
             selected == false ? "border-accent_dark" : "border-transparent"
           }`}
         >
-          2-LOOK OLL
+          2-LOOK PLL
         </p>
       </span>
       <div className="max-w-3xl flex flex-wrap justify-center items-center mx-auto gap-2">
