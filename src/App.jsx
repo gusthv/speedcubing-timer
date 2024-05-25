@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Navbar, Solves, Statistics, Timer } from "./components";
+import { Algorithms, Navbar, Solves, Statistics, Timer } from "./components";
 
 export const Context = React.createContext();
 
@@ -29,6 +29,7 @@ const App = () => {
               <Route path="/statistics" element={<Statistics />} />
               <Route path="/" element={<Timer />} />
               <Route path="/solves" element={<Solves />} />
+              <Route path="/algorithms" element={<Algorithms />} />
             </Routes>
           </section>
         </Router>

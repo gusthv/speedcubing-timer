@@ -48,12 +48,20 @@ const Statistics = () => {
       );
     }
     if (solves.length > 49) {
+      setAverages((prevAverages) => ({
+        ...prevAverages,
+        Ao50: calculateAverage(solves, 50),
+      }));
       localStorage.setItem(
         "Ao50",
         JSON.stringify(calculateAverage(solves, 50))
       );
     }
     if (solves.length > 99) {
+      setAverages((prevAverages) => ({
+        ...prevAverages,
+        Ao100: calculateAverage(solves, 100),
+      }));
       localStorage.setItem(
         "Ao100",
         JSON.stringify(calculateAverage(solves, 100))

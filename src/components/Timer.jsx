@@ -323,14 +323,14 @@ const Timer = () => {
             </div>
           </div>
           <div className="flex justify-center text-[18px]">
-            <div className={`w-[320px] flex flex-row justify-between rounded-b-3xl shadow-xl shadow-[#6bcef226] ${!darkMode ? "text-accent_light" : "text-accent_dark"} text-center`}>
+            <div
+              className={`w-[320px] flex flex-row justify-between rounded-b-3xl shadow-xl shadow-[#6bcef226] ${
+                !darkMode ? "text-accent_light" : "text-accent_dark"
+              } text-center`}
+            >
               <span className="w-1/3">
                 <p>{averages.Ao5 ? <Time value={averages.Ao5} /> : "-"}</p>
-                <p
-                  className="select-none"
-                >
-                  Ao5
-                </p>
+                <p className="select-none">Ao5</p>
               </span>
               <span className="w-1/3">
                 {(() => {
@@ -348,19 +348,11 @@ const Timer = () => {
                     return <p>-</p>;
                   }
                 })()}
-                <p
-                  className="select-none"
-                >
-                  PREVIOUS
-                </p>
+                <p className="select-none">PREVIOUS</p>
               </span>
               <span className="w-1/3">
                 <p>{averages.Ao12 ? <Time value={averages.Ao12} /> : "-"}</p>
-                <p
-                  className="select-none"
-                >
-                  Ao12
-                </p>
+                <p className="select-none">Ao12</p>
               </span>
             </div>
           </div>

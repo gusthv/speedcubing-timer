@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { navLinks } from "../data";
 import { Link, useLocation } from "react-router-dom";
-import { sunIcon, moonIcon } from "../assets";
+import { sunIcon, moonIcon, bookIcon } from "../assets";
 import { Context } from "../App";
 
 const Navbar = () => {
@@ -14,6 +14,16 @@ const Navbar = () => {
         !darkMode ? "bg-navbar_light" : "bg-navbar_dark"
       }`}
     >
+      <Link
+        to="/algorithms"
+        className="flex justify-center items-center mr-[12px]"
+      >
+        <img
+          src={bookIcon}
+          className="w-6 h-6 absolute left-0 ml-[24px] cursor-pointer select-none"
+          alt="algorithms-icon"
+        />
+      </Link>
       <section className="w-full max-w-xl flex justify-between items-center mx-auto text-center font-bold">
         {navLinks.map((link) => (
           <Link
