@@ -252,7 +252,7 @@ const Timer = () => {
             <div
               className={`${
                 previousTime ? "visible" : "hidden"
-              } absolute mt-[2px] ml-[260px] text-[20px] TimerFont`}
+              } absolute ml-[260px] text-[20px] TimerFont`}
             >
               {(() => {
                 if (solves.length < 2) return null;
