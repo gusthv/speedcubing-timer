@@ -281,7 +281,9 @@ const Timer = () => {
                       : rotation.charAt(0) === "B"
                       ? "text-[#1583FF]"
                       : rotation.charAt(0) === "U"
-                      ? "text-[#FFFFFF]"
+                      ? !darkMode
+                        ? "text-[#000000]"
+                        : "text-[#FFFFFF]"
                       : rotation.charAt(0) === "D"
                       ? "text-[#FFFF00]"
                       : ""

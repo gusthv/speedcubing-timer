@@ -45,7 +45,7 @@ const App: FC = () => {
       <div
         className={`w-screen min-h-screen ${
           !darkMode
-            ? "bg-[#E8E8E8] text-[#000000]"
+            ? "bg-[#ffffff42] text-[#000000]"
             : "bg-[#242526] text-[#FFFFFF]"
         }`}
       >
