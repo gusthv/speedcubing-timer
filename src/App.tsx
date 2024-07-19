@@ -45,7 +45,7 @@ const App: FC = () => {
       <div
         className={`w-screen min-h-screen ${
           !darkMode
-            ? "bg-[#ffffff42] text-[#000000]"
+            ? "bg-[#FFFFFF] text-[#000000]"
             : "bg-[#242526] text-[#FFFFFF]"
         }`}
       >
@@ -53,11 +53,10 @@ const App: FC = () => {
           onClick={() => setNavbar(!navbar)}
           className={`w-6 h-6 absolute ${
             navbar ? "top-[84px]" : "top-[24px]"
-          } right-[24px] ${
+          } right-[24px] fill-[#808080] ${
             !darkMode ? "hover:fill-[#000000]" : "hover:fill-[#FFFFFF]"
           } cursor-pointer z-40`}
           viewBox="0 0 32 32"
-          fill="#80808032"
         >
           {!navbar ? (
             <g transform="translate(-102.000000, -985.000000)">

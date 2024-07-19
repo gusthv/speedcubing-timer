@@ -10,7 +10,7 @@ const Timer = () => {
     const storedToggleScramble = localStorage.getItem("toggleScramble");
     return storedToggleScramble !== null
       ? JSON.parse(storedToggleScramble)
-      : false;
+      : true;
   });
   const [toggleColor, setToggleColor] = useState<boolean>(() => {
     const storedToggleColor = localStorage.getItem("toggleColor");
@@ -253,7 +253,7 @@ const Timer = () => {
           <p
             className={`${
               threshold ? "visible" : "hidden"
-            } text-[#00ff00] text-[104px]`}
+            } text-[#00FF00] text-[104px]`}
           >
             0.00
           </p>
@@ -263,7 +263,9 @@ const Timer = () => {
         </div>
         <div className={`${threshold || step === 2 ? "hidden" : "visible"}`}>
           <div
-            className={`max-w-md flex flex-wrap justify-center items-center mx-auto px-16 gap-x-1 text-[22px] font-semibold text-center`}
+            className={`max-w-md flex flex-wrap justify-center items-center mx-auto px-16 gap-x-1 text-[22px] font-semibold ${
+              !darkMode && !toggleColor ? "text-stroke" : ""
+            } text-center`}
           >
             {scramble.split(" ").map((rotation, index) => {
               return (
@@ -281,9 +283,7 @@ const Timer = () => {
                       : rotation.charAt(0) === "B"
                       ? "text-[#1583FF]"
                       : rotation.charAt(0) === "U"
-                      ? !darkMode
-                        ? "text-[#000000]"
-                        : "text-[#FFFFFF]"
+                      ? "text-[#FFFFFF]"
                       : rotation.charAt(0) === "D"
                       ? "text-[#FFFF00]"
                       : ""
@@ -369,7 +369,7 @@ const Timer = () => {
               <div
                 className={`${
                   toggleScramble ? "flex" : "hidden"
-                } w-[360px] h-[150px] flex-row mb-[20px] p-2 border-[2px] border-dotted hover:border-solid border-[#80808016] hover:bg-[#80808032] rounded-md`}
+                } w-[360px] h-[150px] flex-row mb-[20px] p-2 border-[2px] border-[#80808032] hover:bg-[#80808032] rounded-md`}
               >
                 <div className="w-1/2 flex justify-center items-center">
                   <Scramble
@@ -446,7 +446,7 @@ const Timer = () => {
             <div
               className={`${
                 !toggleScramble ? "flex" : "hidden"
-              } w-[320px] h-[80px] flex flex-row justify-between items-center border-[2px] border-dotted hover:border-solid border-[#80808016] hover:bg-[#80808032] text-[#808080] font-semibold text-center rounded-md`}
+              } w-[320px] h-[80px] flex flex-row justify-between items-center border-[2px] border-[#80808032] hover:bg-[#80808032] text-[#808080] font-semibold text-center rounded-md`}
             >
               <span className="w-1/3">
                 <p
@@ -525,7 +525,7 @@ const Timer = () => {
             navbar ? "top-[132px]" : "top-[84px]"
           } right-[24px] ${
             !darkMode ? "hover:fill-[#000000]" : "hover:fill-[#FFFFFF]"
-          } fill-[#80808032] cursor-pointer`}
+          } fill-[#808080] cursor-pointer`}
           viewBox="0 0 321.95 321.95"
         >
           <g transform="translate(0 -562.36)">
@@ -554,7 +554,7 @@ const Timer = () => {
           <path
             d="M10.5 10.5c.002 2.762-2.237 5-5 5s-5.002-2.238-5-5c-.002-2.76 2.237-5 5-5s5.002 2.24 5 5z"
             fill={!toggleColor ? "#FF15A1" : "#80808016"}
-            stroke="#373737"
+            stroke={!toggleColor ? "" : "#373737"}
           />
           <path
             d="M8 1.401a4.998 4.998 0 0 0-2.488 9.334c-.004-.078-.012-.155-.012-.234a4.998 4.998 0 0 1 7.488-4.334A4.994 4.994 0 0 0 8 1.4z"
@@ -583,7 +583,7 @@ const Timer = () => {
           <path
             d="M8 1.401a4.998 4.998 0 0 0-4.994 4.77 4.998 4.998 0 1 0 4.992 8.658 4.998 4.998 0 1 0 4.99-8.662A4.994 4.994 0 0 0 8 1.4z"
             fill="none"
-            stroke="#373737"
+            stroke={!toggleColor ? "" : "#373737"}
           />
         </svg>
       </span>

@@ -50,7 +50,7 @@ const Graph: React.FC<GraphProps> = (values) => {
         <Line
           type={values.type}
           dataKey="time"
-          stroke={!darkMode ? "#000000" : "#ffffff"}
+          stroke={!darkMode ? "#000000" : "#FFFFFF"}
           dot={false}
         />
       </LineChart>

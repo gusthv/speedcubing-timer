@@ -131,7 +131,7 @@ const Scramble = ({ scramble, width, height }: ScrambleProps) => {
   const showScramble = () => {
     const renderSide = (side: string[]) => (
       <div
-        className={`${width} ${height} grid grid-cols-3 m-[1px] gap-[1px] border-[1px] border-[#000000]`}
+        className={`${width} ${height} grid grid-cols-3 m-[1px] gap-[1px] bg-[#000000] border-[1px] border-[#000000]`}
       >
         {side.map((color, colorIndex) => (
           <div
