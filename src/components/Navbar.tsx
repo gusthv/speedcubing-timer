@@ -41,7 +41,7 @@ const Navbar = () => {
                   : "border-[#FFFFFF]"
                 : `${
                     !darkMode ? "hover:text-[#000000]" : "hover:text-[#FFFFFF]"
-                  } text-[#808080] border-[#80808016]`
+                  } text-[#808080] border-dashed hover:border-solid border-[#80808016] hover:border-[#80808032]`
             }`}
           >
             {link.title}

@@ -108,7 +108,7 @@ const Solves: React.FC = () => {
                   {index === 0 && (
                     <p
                       onClick={() => clearAll()}
-                      className={`mb-[18px] p-2 border-[2px] border-[#80808032] hover:bg-[#80808032] font-bold text-center cursor-pointer select-none rounded-md`}
+                      className={`mb-[18px] p-2 font-bold text-center cursor-pointer border-[2px] border-dashed hover:border-solid border-[#80808016] hover:border-[#80808032] select-none rounded-md`}
                     >
                       CLEAR
                     </p>

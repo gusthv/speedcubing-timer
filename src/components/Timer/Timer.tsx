@@ -369,7 +369,7 @@ const Timer = () => {
               <div
                 className={`${
                   toggleScramble ? "flex" : "hidden"
-                } w-[360px] h-[150px] flex-row mb-[20px] p-2 border-[2px] border-[#80808032] hover:bg-[#80808032] rounded-md`}
+                } w-[360px] h-[150px] flex-row mb-[20px] p-2 border-[2px] border-dashed hover:border-solid border-[#80808016] hover:border-[#80808032] rounded-md`}
               >
                 <div className="w-1/2 flex justify-center items-center">
                   <Scramble
@@ -446,7 +446,7 @@ const Timer = () => {
             <div
               className={`${
                 !toggleScramble ? "flex" : "hidden"
-              } w-[320px] h-[80px] flex flex-row justify-between items-center border-[2px] border-[#80808032] hover:bg-[#80808032] text-[#808080] font-semibold text-center rounded-md`}
+              } w-[320px] h-[80px] flex flex-row justify-between items-center text-[#808080] font-semibold text-center border-[2px] border-dashed hover:border-solid border-[#80808016] hover:border-[#80808032] rounded-md`}
             >
               <span className="w-1/3">
                 <p
