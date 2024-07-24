@@ -3,7 +3,7 @@ import { Scramble, Time } from "../../components";
 import { Context } from "../../App";
 
 const Timer = () => {
-  const { navbar, darkMode, isMobile } = useContext(Context);
+  const { navbar, darkMode } = useContext(Context);
 
   const [toggleScramble, setToggleScramble] = useState<boolean>(() => {
     const storedToggleScramble = localStorage.getItem("toggleScramble");
