@@ -1,7 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Graph, Time } from "../../components";
+import { Context } from "../../App";
 
 const Statistics = () => {
+  const { isMobile } = useContext(Context);
+
   const solves = JSON.parse(localStorage.getItem("solves") as string) || [];
 
   const [averages, setAverages] = useState({
@@ -127,7 +130,12 @@ const Statistics = () => {
       >
         <div className="w-full max-w-xl flex flex-col items-center gap-[18px]">
           {solveCollections.map((collection, index) => (
-            <div key={index} className="w-[340px] flex flex-col">
+            <div
+              key={index}
+              className={`${
+                isMobile ? "w-[288px]" : "w-[340px]"
+              } flex flex-col`}
+            >
               <p className="px-2 font-bold">{collection.label}</p>
               <span className="flex flex-row justify-between px-2 font-semibold">
                 <span className="flex flex-row gap-1">
@@ -157,8 +165,8 @@ const Statistics = () => {
               </span>
               <Graph
                 solves={collection.solves.solves}
-                width={340}
-                height={220}
+                width={isMobile ? 288 : 340}
+                height={isMobile ? 180 : 220}
                 type={!index ? "linear" : "monotone"}
               />
             </div>

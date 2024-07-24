@@ -80,7 +80,7 @@ const Navbar = () => {
       </Link>
       <div
         className={`w-full max-w-xl flex ${
-          !isMobile ? "justify-between" : "justify-center"
+          !isMobile ? "justify-between px-20" : "justify-center"
         } mx-auto text-center`}
       >
         {navlinks.map((link: navlink, index) => (

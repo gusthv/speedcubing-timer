@@ -6,3 +6,7 @@
   -webkit-text-stroke-width: 0.6px;
   -webkit-text-stroke-color: black;
 }
+
+.scaling-text {
+  font-size: calc(0.6rem + 0.6vw);
+}

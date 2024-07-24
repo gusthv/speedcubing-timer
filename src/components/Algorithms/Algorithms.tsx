@@ -4,7 +4,7 @@ import { AlgorithmCollection } from "../../components";
 import { Context } from "../../App";
 
 const Algorithms: React.FC = () => {
-  const { darkMode } = useContext(Context);
+  const { darkMode, isMobile } = useContext(Context);
 
   const [toggleAlgorithm, setToggleAlgorithm] = useState<boolean>(
     JSON.parse(localStorage.getItem("toggleAlgorithm") as string) || false
@@ -19,7 +19,9 @@ const Algorithms: React.FC = () => {
       <div className="max-w-xl h-min-content flex flex-col items-center mx-auto py-[18px]">
         <span
           onClick={() => setToggleAlgorithm(!toggleAlgorithm)}
-          className="w-[288px] flex flex-row justify-center mb-[18px] p-2 gap-2 text-[#808080] font-semibold border-[2px] border-dashed hover:border-solid border-[#80808016] hover:border-[#80808032] cursor-pointer rounded-md"
+          className={`${
+            isMobile ? "w-[288px]" : "w-[340px]"
+          } flex flex-row justify-center mb-[18px] p-2 gap-2 text-[#808080] font-semibold border-[2px] border-dashed hover:border-solid border-[#80808016] hover:border-[#80808032] cursor-pointer rounded-md`}
         >
           <p
             className={`${

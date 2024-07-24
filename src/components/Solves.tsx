@@ -12,7 +12,7 @@ interface SolveItemProps {
 }
 
 const Solves: React.FC = () => {
-  const { darkMode } = useContext(Context);
+  const { darkMode, isMobile } = useContext(Context);
 
   const [solves, setSolves] = useState<number[]>(
     JSON.parse(localStorage.getItem("solves") as string) || []
@@ -77,7 +77,11 @@ const Solves: React.FC = () => {
           <Time value={solve} />
         </p>
       </span>
-      <p className="flex items-center text-[#808080] font-semibold whitespace-nowrap">
+      <p
+        className={`flex items-center text-[#808080] ${
+          isMobile ? "scaling-text" : ""
+        } font-semibold`}
+      >
         {scramble}
       </p>
     </span>
@@ -97,7 +101,7 @@ const Solves: React.FC = () => {
           solves.length ? "flex" : "hidden"
         } w-full h-full flex justify-center overflow-x-hidden overflow-y-scroll`}
       >
-        <div className="flex flex-col gap-[18px]">
+        <div className="max-w-[80%] flex flex-col gap-[18px]">
           {solves
             .slice()
             .reverse()
