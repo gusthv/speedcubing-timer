@@ -3,7 +3,7 @@ import { Scramble, Time } from "../../components";
 import { Context } from "../../App";
 
 const Timer = () => {
-  const { navbar, darkMode } = useContext(Context);
+  const { navbar, darkMode, isMobile } = useContext(Context);
 
   const [toggleScramble, setToggleScramble] = useState<boolean>(() => {
     const storedToggleScramble = localStorage.getItem("toggleScramble");
@@ -83,49 +83,45 @@ const Timer = () => {
     }
   };
 
-  // function process_touchstart(event: string) {
-  //   if (event == "touchstart") {
-  //     switch (step) {
-  //       case 0:
-  //         setStep(1);
-  //         break;
-  //       case 2:
-  //         setStep(3);
-  //         break;
-  //     }
-  //   }
-  // }
+  function process_touchstart(event: string) {
+    if (event == "touchstart") {
+      switch (step) {
+        case 0:
+          setStep(1);
+          break;
+        case 2:
+          setStep(3);
+          break;
+      }
+    }
+  }
 
-  // function process_touchend(event: string) {
-  //   if (event == "touchend") {
-  //     switch (step) {
-  //       case 1:
-  //         if (threshold) {
-  //           setStep(2);
-  //         } else {
-  //           if (thresholdInterval) clearInterval(thresholdInterval);
-  //           setStep(0);
-  //         }
-  //         break;
-  //       case 3:
-  //         setStep(4);
-  //         break;
-  //     }
-  //   }
-  // }
+  function process_touchend(event: string) {
+    if (event == "touchend") {
+      switch (step) {
+        case 1:
+          if (threshold) {
+            setStep(2);
+          } else {
+            if (thresholdInterval) clearInterval(thresholdInterval);
+            setStep(0);
+          }
+          break;
+        case 3:
+          setStep(4);
+          break;
+      }
+    }
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0);
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("keyup", handleKeyUp);
-    // window.addEventListener("touchstart", process_touchstart, false);
-    // window.addEventListener("touchend", process_touchend, false);
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("keyup", handleKeyUp);
-      // window.removeEventListener("touchstart", process_touchstart, false);
-      // window.removeEventListener("touchend", process_touchend, false);
     };
   });
 
@@ -621,13 +617,13 @@ const Timer = () => {
           />
         </svg>
       </span>
-      {/* <div
+      <div
         onTouchStart={() => process_touchstart("touchstart")}
         onTouchEnd={() => process_touchend("touchend")}
         className={`${
           isMobile ? "flex" : "hidden"
         } w-screen h-screen fixed select-none z-30`}
-      /> */}
+      />
     </div>
   );
 };
