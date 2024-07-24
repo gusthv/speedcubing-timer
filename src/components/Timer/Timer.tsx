@@ -83,36 +83,36 @@ const Timer = () => {
     }
   };
 
-  function process_touchstart(event: string) {
-    if (event == "touchstart") {
-      switch (step) {
-        case 0:
-          setStep(1);
-          break;
-        case 2:
-          setStep(3);
-          break;
-      }
-    }
-  }
+  // function process_touchstart(event: string) {
+  //   if (event == "touchstart") {
+  //     switch (step) {
+  //       case 0:
+  //         setStep(1);
+  //         break;
+  //       case 2:
+  //         setStep(3);
+  //         break;
+  //     }
+  //   }
+  // }
 
-  function process_touchend(event: string) {
-    if (event == "touchend") {
-      switch (step) {
-        case 1:
-          if (threshold) {
-            setStep(2);
-          } else {
-            if (thresholdInterval) clearInterval(thresholdInterval);
-            setStep(0);
-          }
-          break;
-        case 3:
-          setStep(4);
-          break;
-      }
-    }
-  }
+  // function process_touchend(event: string) {
+  //   if (event == "touchend") {
+  //     switch (step) {
+  //       case 1:
+  //         if (threshold) {
+  //           setStep(2);
+  //         } else {
+  //           if (thresholdInterval) clearInterval(thresholdInterval);
+  //           setStep(0);
+  //         }
+  //         break;
+  //       case 3:
+  //         setStep(4);
+  //         break;
+  //     }
+  //   }
+  // }
 
   useEffect(() => {
     window.scrollTo(0, 0);
