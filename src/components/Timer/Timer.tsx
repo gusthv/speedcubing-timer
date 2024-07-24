@@ -84,7 +84,6 @@ const Timer = () => {
   };
 
   function process_touchstart(event: string) {
-    console.log(event);
     if (event == "touchstart") {
       switch (step) {
         case 0:
@@ -98,7 +97,6 @@ const Timer = () => {
   }
 
   function process_touchend(event: string) {
-    console.log(event);
     if (event == "touchend") {
       switch (step) {
         case 1:
@@ -120,14 +118,14 @@ const Timer = () => {
     window.scrollTo(0, 0);
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("keyup", handleKeyUp);
-    window.addEventListener("touchstart", process_touchstart, false);
-    window.addEventListener("touchend", process_touchend, false);
+    // window.addEventListener("touchstart", process_touchstart, false);
+    // window.addEventListener("touchend", process_touchend, false);
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("keyup", handleKeyUp);
-      window.addEventListener("touchstart", process_touchstart, false);
-      window.addEventListener("touchend", process_touchend, false);
+      // window.removeEventListener("touchstart", process_touchstart, false);
+      // window.removeEventListener("touchend", process_touchend, false);
     };
   });
 
@@ -623,13 +621,13 @@ const Timer = () => {
           />
         </svg>
       </span>
-      <div
+      {/* <div
         onTouchStart={() => process_touchstart("touchstart")}
         onTouchEnd={() => process_touchend("touchend")}
         className={`${
           isMobile ? "flex" : "hidden"
         } w-screen h-screen fixed select-none z-30`}
-      />
+      /> */}
     </div>
   );
 };
