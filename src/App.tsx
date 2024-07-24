@@ -14,13 +14,17 @@ type ContextType = {
   setNavbar: Dispatch<SetStateAction<boolean>>;
   darkMode: boolean;
   setDarkMode: Dispatch<SetStateAction<boolean>>;
+  isMobile: boolean;
+  setIsMobile: Dispatch<SetStateAction<boolean>>;
 };
 
 export const Context = createContext<ContextType>({
-  darkMode: false,
-  setDarkMode: () => {},
   navbar: true,
   setNavbar: () => {},
+  darkMode: false,
+  setDarkMode: () => {},
+  isMobile: false,
+  setIsMobile: () => {},
 });
 
 const App: FC = () => {
@@ -34,6 +38,13 @@ const App: FC = () => {
       ? JSON.parse(localStorage.getItem("darkMode")!)
       : true
   );
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (navigator.userAgent.includes("Android" || "iPhone" || "iPad")) {
+      setIsMobile(true);
+    }
+  });
 
   useEffect(() => {
     localStorage.setItem("navbar", JSON.stringify(navbar));
@@ -41,7 +52,16 @@ const App: FC = () => {
   }, [darkMode, navbar]);
 
   return (
-    <Context.Provider value={{ darkMode, setDarkMode, navbar, setNavbar }}>
+    <Context.Provider
+      value={{
+        darkMode,
+        setDarkMode,
+        navbar,
+        setNavbar,
+        isMobile,
+        setIsMobile,
+      }}
+    >
       <div
         className={`w-screen min-h-screen ${
           !darkMode
@@ -69,7 +89,7 @@ const App: FC = () => {
           )}
         </svg>
         <Router>
-          <div className={`${navbar ? "flex" : "hidden"} h-[60px] z-30`}>
+          <div className={`${navbar ? "flex" : "hidden"} h-[60px]`}>
             <Navbar />
           </div>
           <div
