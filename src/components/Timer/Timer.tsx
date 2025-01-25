@@ -384,9 +384,9 @@ const Timer = () => {
               })()}
             </div>
             <div
-              className={`${
-                threshold || step === 2 ? "hidden" : "visible"
-              } text-[104px]`}
+              className={`${threshold || step === 2 ? "hidden" : "visible"} ${
+                isMobile ? "text-[84px]" : "text-[104px]"
+              }`}
             >
               <p
                 className={`${
@@ -414,7 +414,11 @@ const Timer = () => {
                 </p>
               </div>
             </div>
-            <div className={`${threshold ? "visible" : "hidden"} text-[104px]`}>
+            <div
+              className={`${threshold ? "visible" : "hidden"} ${
+                isMobile ? "text-[84px]" : "text-[104px]"
+              }`}
+            >
               <p className={`${step === 2 ? "visible" : "hidden"}`}>
                 <Time value={time} />
               </p>
