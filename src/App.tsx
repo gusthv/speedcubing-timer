@@ -93,8 +93,8 @@ const App: FC = () => {
             className="z-20"
             style={
               navbar
-                ? { height: "calc(100vh - 60px)" }
-                : { height: "calc(100vh)" }
+                ? { height: "calc(100dvh - 60px)" }
+                : { height: "calc(100dvh)" }
             }
           >
             <Routes>
