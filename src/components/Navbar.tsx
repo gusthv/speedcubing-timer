@@ -62,7 +62,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full h-full flex items-center font-bold select-none z-40">
+    <nav className="w-full h-full flex items-center font-bold overflow-hidden select-none z-40">
       <Link to="/algorithms" className="flex justify-center items-center">
         <svg
           className={`w-6 h-6 absolute left-0 ml-[24px] cursor-pointer ${
