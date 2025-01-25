@@ -24,15 +24,15 @@ type ContextType = {
 
 export const Context = createContext<ContextType>({
   navbar: true,
-  setNavbar: () => {},
+  setNavbar: () => { },
   darkMode: false,
-  setDarkMode: () => {},
+  setDarkMode: () => { },
   isMobile: false,
-  setIsMobile: () => {},
+  setIsMobile: () => { },
   isFast: false,
-  setIsFast: () => {},
+  setIsFast: () => { },
   showItems: false,
-  setShowItems: () => {},
+  setShowItems: () => { },
 });
 
 const App: FC = () => {
@@ -86,11 +86,10 @@ const App: FC = () => {
       }}
     >
       <div
-        className={`w-screen h-[100dvh] ${
-          !darkMode
+        className={`w-screen h-[100dvh] ${!darkMode
             ? "bg-[#FFFFFF] text-[#000000]"
             : "bg-[#242526] text-[#FFFFFF]"
-        } ${isMobile ? "overflow-y-hidden select-none" : ""}`}
+          } ${isMobile ? "overflow-y-hidden select-none" : ""}`}
       >
         <Router>
           <div

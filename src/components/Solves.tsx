@@ -69,9 +69,8 @@ const Solves: React.FC = () => {
       <span className="flex flex-row items-center gap-2">
         <svg
           onClick={() => deleteSolve(index)}
-          className={`h-6 ${
-            !darkMode ? "hover:fill-[#000000]" : "hover:fill-[#FFFFFF]"
-          } fill-[#808080] cursor-pointer`}
+          className={`h-6 ${!darkMode ? "hover:fill-[#000000]" : "hover:fill-[#FFFFFF]"
+            } fill-[#808080] cursor-pointer`}
           viewBox="0 0 24 24"
         >
           <path d="M2.75 6.16667C2.75 5.70644 3.09538 5.33335 3.52143 5.33335L6.18567 5.3329C6.71502 5.31841 7.18202 4.95482 7.36214 4.41691C7.36688 4.40277 7.37232 4.38532 7.39185 4.32203L7.50665 3.94993C7.5769 3.72179 7.6381 3.52303 7.72375 3.34536C8.06209 2.64349 8.68808 2.1561 9.41147 2.03132C9.59457 1.99973 9.78848 1.99987 10.0111 2.00002H13.4891C13.7117 1.99987 13.9056 1.99973 14.0887 2.03132C14.8121 2.1561 15.4381 2.64349 15.7764 3.34536C15.8621 3.52303 15.9233 3.72179 15.9935 3.94993L16.1083 4.32203C16.1279 4.38532 16.1333 4.40277 16.138 4.41691C16.3182 4.95482 16.8778 5.31886 17.4071 5.33335H19.9786C20.4046 5.33335 20.75 5.70644 20.75 6.16667C20.75 6.62691 20.4046 7 19.9786 7H3.52143C3.09538 7 2.75 6.62691 2.75 6.16667Z" />
@@ -82,31 +81,29 @@ const Solves: React.FC = () => {
         </p>
       </span>
       <div
-        className={`flex flex-wrap justify-center items-center mx-auto gap-x-1 text-[#808080] font-semibold test-center ${
-          isMobile ? "scaling-text" : ""
-        } ${!darkMode && !toggleColor ? "text-stroke" : ""}`}
+        className={`flex flex-wrap justify-center items-center mx-auto gap-x-1 text-[#808080] font-semibold test-center ${isMobile ? "scaling-text" : ""
+          } ${!darkMode && !toggleColor ? "text-stroke" : ""}`}
       >
         {scramble.split(" ").map((rotation, index) => {
           return (
             <span
               key={index}
-              className={`${
-                toggleColor
-                  ? ""
-                  : rotation.charAt(0) === "L"
+              className={`${toggleColor
+                ? ""
+                : rotation.charAt(0) === "L"
                   ? "text-[#FFA500]"
                   : rotation.charAt(0) === "R"
-                  ? "text-[#F22E2E]"
-                  : rotation.charAt(0) === "F"
-                  ? "text-[#00FF00]"
-                  : rotation.charAt(0) === "B"
-                  ? "text-[#1583FF]"
-                  : rotation.charAt(0) === "U"
-                  ? "text-[#FFFFFF]"
-                  : rotation.charAt(0) === "D"
-                  ? "text-[#FFFF00]"
-                  : ""
-              }`}
+                    ? "text-[#F22E2E]"
+                    : rotation.charAt(0) === "F"
+                      ? "text-[#00FF00]"
+                      : rotation.charAt(0) === "B"
+                        ? "text-[#1583FF]"
+                        : rotation.charAt(0) === "U"
+                          ? "text-[#FFFFFF]"
+                          : rotation.charAt(0) === "D"
+                            ? "text-[#FFFF00]"
+                            : ""
+                }`}
             >
               {rotation}
             </span>
@@ -120,16 +117,14 @@ const Solves: React.FC = () => {
   return (
     <div className="w-full h-full py-[18px]">
       <div
-        className={`${
-          !solves.length ? "flex" : "hidden"
-        } w-full h-full justify-center items-center text-[#80808080] text-[4em] overflow-hidden`}
+        className={`${!solves.length ? "flex" : "hidden"
+          } w-full h-full justify-center items-center text-[#80808080] text-[4em] overflow-hidden`}
       >
         NO SOLVES
       </div>
       <div
-        className={`${
-          solves.length ? "flex" : "hidden"
-        } w-full h-full flex justify-center overflow-x-hidden overflow-y-scroll`}
+        className={`${solves.length ? "flex" : "hidden"
+          } w-full h-full flex justify-center overflow-x-hidden overflow-y-scroll`}
       >
         <div className="max-w-[80%] flex flex-col gap-[18px]">
           {solves

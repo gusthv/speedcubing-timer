@@ -306,59 +306,53 @@ const Timer = () => {
         loop
         muted
         preload="auto"
-        className={`absolute top-0 left-0 w-full h-full object-cover ${
-          isFast ? "" : "hidden"
-        }`}
+        className={`absolute top-0 left-0 w-full h-full object-cover ${isFast ? "" : "hidden"
+          }`}
         src={selectedVideo}
       />
       <section className="fixed">
         <div
-          className={`${
-            threshold || step === 2 ? "visible" : "hidden"
-          } flex justify-center items-center`}
+          className={`${threshold || step === 2 ? "visible" : "hidden"
+            } flex justify-center items-center`}
         >
           <p
-            className={`${
-              threshold ? "visible" : "hidden"
-            } text-[#00FF00] text-[104px] jetbrains-mono`}
+            className={`${threshold ? "visible" : "hidden"
+              } text-[#00FF00] text-[104px] jetbrains-mono`}
           >
             0.00
           </p>
           <p
-            className={`${!threshold ? "visible" : "hidden"} ${
-              isMobile ? "text-[104px]" : "text-[144px]"
-            } ${nowFast ? "text-[#FFFFFF]" : ""}`}
+            className={`${!threshold ? "visible" : "hidden"} ${isMobile ? "text-[104px]" : "text-[144px]"
+              } ${nowFast ? "text-[#FFFFFF]" : ""}`}
           >
             <Time value={time} />
           </p>
         </div>
         <div className={`${threshold || step === 2 ? "hidden" : "visible"}`}>
           <div
-            className={`max-w-md flex flex-wrap justify-center items-center mx-auto px-16 gap-x-1 text-[22px] font-semibold ${
-              !darkMode && !toggleColor ? "text-stroke" : ""
-            } text-center`}
+            className={`max-w-md flex flex-wrap justify-center items-center mx-auto px-16 gap-x-1 text-[22px] font-semibold ${!darkMode && !toggleColor ? "text-stroke" : ""
+              } text-center`}
           >
             {scramble.split(" ").map((rotation, index) => {
               return (
                 <span
                   key={index}
-                  className={`${
-                    toggleColor
-                      ? ""
-                      : rotation.charAt(0) === "L"
+                  className={`${toggleColor
+                    ? ""
+                    : rotation.charAt(0) === "L"
                       ? "text-[#FFA500]"
                       : rotation.charAt(0) === "R"
-                      ? "text-[#F22E2E]"
-                      : rotation.charAt(0) === "F"
-                      ? "text-[#00FF00]"
-                      : rotation.charAt(0) === "B"
-                      ? "text-[#1583FF]"
-                      : rotation.charAt(0) === "U"
-                      ? "text-[#FFFFFF]"
-                      : rotation.charAt(0) === "D"
-                      ? "text-[#FFFF00]"
-                      : ""
-                  }`}
+                        ? "text-[#F22E2E]"
+                        : rotation.charAt(0) === "F"
+                          ? "text-[#00FF00]"
+                          : rotation.charAt(0) === "B"
+                            ? "text-[#1583FF]"
+                            : rotation.charAt(0) === "U"
+                              ? "text-[#FFFFFF]"
+                              : rotation.charAt(0) === "D"
+                                ? "text-[#FFFF00]"
+                                : ""
+                    }`}
                 >
                   {rotation}
                 </span>
@@ -368,9 +362,8 @@ const Timer = () => {
 
           <div className="flex justify-center">
             <div
-              className={`${
-                previousTime ? "visible" : "hidden"
-              } absolute ml-[260px] text-[20px] font-semibold`}
+              className={`${previousTime ? "visible" : "hidden"
+                } absolute ml-[260px] text-[20px] font-semibold`}
             >
               {(() => {
                 if (solves.length < 2) return null;
@@ -394,14 +387,12 @@ const Timer = () => {
               })()}
             </div>
             <div
-              className={`${
-                threshold || step === 2 ? "hidden" : "visible"
-              } text-[104px]`}
+              className={`${threshold || step === 2 ? "hidden" : "visible"
+                } text-[104px]`}
             >
               <p
-                className={`${
-                  step === 1 ? "visible" : "hidden"
-                } text-[#F22E2E] jetbrains-mono`}
+                className={`${step === 1 ? "visible" : "hidden"
+                  } text-[#F22E2E] jetbrains-mono`}
               >
                 0.00
               </p>
@@ -416,9 +407,8 @@ const Timer = () => {
                   />
                 </p>
                 <p
-                  className={`${
-                    previousTime ? "hidden" : "visible"
-                  } jetbrains-mono`}
+                  className={`${previousTime ? "hidden" : "visible"
+                    } jetbrains-mono`}
                 >
                   0.00
                 </p>
@@ -429,24 +419,21 @@ const Timer = () => {
                 <Time value={time} />
               </p>
               <p
-                className={`${
-                  step === 2 ? "hidden" : "visible"
-                } text-[#00FF00] jetbrains-mono`}
+                className={`${step === 2 ? "hidden" : "visible"
+                  } text-[#00FF00] jetbrains-mono`}
               >
                 0.00
               </p>
             </div>
           </div>
           <div
-            className={`${
-              toggleScramble ? "h-[150px]" : "h-[80px]"
-            } flex flex-col justify-center items-center text-[18px]`}
+            className={`${toggleScramble ? "h-[150px]" : "h-[80px]"
+              } flex flex-col justify-center items-center text-[18px]`}
           >
             <div>
               <div
-                className={`${
-                  toggleScramble ? "flex" : "hidden"
-                } w-[360px] h-[150px] flex-row mb-[20px] p-2 border-[2px] border-dashed hover:border-solid border-[#80808016] hover:border-[#80808032] rounded-md`}
+                className={`${toggleScramble ? "flex" : "hidden"
+                  } w-[360px] h-[150px] flex-row mb-[20px] p-2 border-[2px] border-dashed hover:border-solid border-[#80808016] hover:border-[#80808032] rounded-md`}
               >
                 <div className="w-1/2 flex justify-center items-center">
                   <Scramble
@@ -462,9 +449,8 @@ const Timer = () => {
                         AO5
                       </p>
                       <p
-                        className={`${
-                          !averages.AO5 ? "text-[#808080]" : ""
-                        } text-[20px]`}
+                        className={`${!averages.AO5 ? "text-[#808080]" : ""
+                          } text-[20px]`}
                       >
                         {averages.AO5 ? <Time value={averages.AO5} /> : "-"}
                       </p>
@@ -474,9 +460,8 @@ const Timer = () => {
                         AO50
                       </p>
                       <p
-                        className={`${
-                          !averages.AO50 ? "text-[#808080]" : ""
-                        } text-[20px] font-bold`}
+                        className={`${!averages.AO50 ? "text-[#808080]" : ""
+                          } text-[20px] font-bold`}
                       >
                         {averages.AO50 ? <Time value={averages.AO50} /> : "-"}
                       </p>
@@ -488,9 +473,8 @@ const Timer = () => {
                         AO12
                       </p>
                       <p
-                        className={`${
-                          !averages.AO12 ? "text-[#808080]" : ""
-                        } text-[20px] font-bold`}
+                        className={`${!averages.AO12 ? "text-[#808080]" : ""
+                          } text-[20px] font-bold`}
                       >
                         {averages.AO12 ? <Time value={averages.AO12} /> : "-"}
                       </p>
@@ -500,9 +484,8 @@ const Timer = () => {
                         MEAN
                       </p>
                       <p
-                        className={`${
-                          solves.length < 2 ? "text-[#808080]" : ""
-                        } text-[18px] font-bold`}
+                        className={`${solves.length < 2 ? "text-[#808080]" : ""
+                          } text-[18px] font-bold`}
                       >
                         {solves.length < 2 ? (
                           "-"
@@ -510,7 +493,7 @@ const Timer = () => {
                           <Time
                             value={Math.ceil(
                               solves.reduce((acc, curr) => acc + curr, 0) /
-                                solves.length
+                              solves.length
                             )}
                           />
                         )}
@@ -521,19 +504,17 @@ const Timer = () => {
               </div>
             </div>
             <div
-              className={`${
-                !toggleScramble ? "flex" : "hidden"
-              } w-[320px] h-[80px] flex flex-row justify-between items-center text-[#808080] font-semibold text-center border-[2px] border-dashed hover:border-solid border-[#80808016] hover:border-[#80808032] rounded-md`}
+              className={`${!toggleScramble ? "flex" : "hidden"
+                } w-[320px] h-[80px] flex flex-row justify-between items-center text-[#808080] font-semibold text-center border-[2px] border-dashed hover:border-solid border-[#80808016] hover:border-[#80808032] rounded-md`}
             >
               <span className="w-1/3">
                 <p
-                  className={`${
-                    averages.AO5 && !darkMode
-                      ? "text-[#000000]"
-                      : averages.AO5 && darkMode
+                  className={`${averages.AO5 && !darkMode
+                    ? "text-[#000000]"
+                    : averages.AO5 && darkMode
                       ? "text-[#FFFFFF]"
                       : ""
-                  }`}
+                    }`}
                 >
                   {averages.AO5 ? <Time value={averages.AO5} /> : "-"}
                 </p>
@@ -547,9 +528,8 @@ const Timer = () => {
                     } else {
                       return (
                         <p
-                          className={`${
-                            !darkMode ? "text-[#000000]" : "text-[#FFFFFF]"
-                          }`}
+                          className={`${!darkMode ? "text-[#000000]" : "text-[#FFFFFF]"
+                            }`}
                         >
                           {<Time value={solves[solves.length - 1]} />}
                         </p>
@@ -558,9 +538,8 @@ const Timer = () => {
                   } else if (solves[solves.length - 2] != null) {
                     return (
                       <p
-                        className={`${
-                          !darkMode ? "text-[#000000]" : "text-[#FFFFFF]"
-                        }`}
+                        className={`${!darkMode ? "text-[#000000]" : "text-[#FFFFFF]"
+                          }`}
                       >
                         {<Time value={solves[solves.length - 2]} />}
                       </p>
@@ -573,13 +552,12 @@ const Timer = () => {
               </span>
               <span className="w-1/3">
                 <p
-                  className={`${
-                    averages.AO12 && !darkMode
-                      ? "text-[#000000]"
-                      : averages.AO12 && darkMode
+                  className={`${averages.AO12 && !darkMode
+                    ? "text-[#000000]"
+                    : averages.AO12 && darkMode
                       ? "text-[#FFFFFF]"
                       : ""
-                  }`}
+                    }`}
                 >
                   {averages.AO12 ? <Time value={averages.AO12} /> : "-"}
                 </p>
@@ -592,11 +570,9 @@ const Timer = () => {
       <span className={`${showItems == false ? "hidden" : ""} z-40`}>
         <svg
           onClick={() => setNavbar(!navbar)}
-          className={`w-6 h-6 absolute ${
-            navbar ? "top-[72px]" : "top-[24px]"
-          } right-[24px] fill-[#808080] ${
-            !darkMode ? "hover:fill-[#000000]" : "hover:fill-[#FFFFFF]"
-          } cursor-pointer z-40`}
+          className={`w-6 h-6 absolute ${navbar ? "top-[72px]" : "top-[24px]"
+            } right-[24px] fill-[#808080] ${!darkMode ? "hover:fill-[#000000]" : "hover:fill-[#FFFFFF]"
+            } cursor-pointer z-40`}
           viewBox="0 0 32 32"
         >
           {!navbar ? (
@@ -617,11 +593,9 @@ const Timer = () => {
               JSON.stringify(!toggleScramble)
             );
           }}
-          className={`w-6 h-6 fixed ${
-            navbar ? "top-[120px]" : "top-[72px]"
-          } right-[24px] ${
-            !darkMode ? "hover:fill-[#000000]" : "hover:fill-[#FFFFFF]"
-          } fill-[#808080] cursor-pointer`}
+          className={`w-6 h-6 fixed ${navbar ? "top-[120px]" : "top-[72px]"
+            } right-[24px] ${!darkMode ? "hover:fill-[#000000]" : "hover:fill-[#FFFFFF]"
+            } fill-[#808080] cursor-pointer`}
           viewBox="0 0 321.95 321.95"
         >
           <g transform="translate(0 -562.36)">
@@ -638,9 +612,8 @@ const Timer = () => {
           </g>
         </svg>
         <svg
-          className={`w-6 h-6 fixed ${
-            navbar ? "top-[168px]" : "top-[120px]"
-          } right-[24px] cursor-pointer`}
+          className={`w-6 h-6 fixed ${navbar ? "top-[168px]" : "top-[120px]"
+            } right-[24px] cursor-pointer`}
           viewBox="0 0 16 16"
           onClick={() => {
             setToggleColor(!toggleColor);
@@ -683,9 +656,8 @@ const Timer = () => {
           />
         </svg>
         <span
-          className={`w-6 h-6 fixed flex items-center justify-center ${
-            navbar ? "top-[216px]" : "top-[168px]"
-          } right-[24px] text-2xl leading-none cursor-pointer`}
+          className={`w-6 h-6 fixed flex items-center justify-center ${navbar ? "top-[216px]" : "top-[168px]"
+            } right-[24px] text-2xl leading-none cursor-pointer`}
           onClick={() => setNowFast(!nowFast)}
         >
           {nowFast ? "🚀" : "🐌"}
@@ -694,9 +666,8 @@ const Timer = () => {
       <div
         onTouchStart={() => process_touchstart("touchstart")}
         onTouchEnd={() => process_touchend("touchend")}
-        className={`${
-          isMobile ? "flex" : "hidden"
-        } w-screen h-screen fixed select-none cursor-pointer z-10`}
+        className={`${isMobile ? "flex" : "hidden"
+          } w-screen h-screen fixed select-none cursor-pointer z-10`}
       />
     </div>
   );

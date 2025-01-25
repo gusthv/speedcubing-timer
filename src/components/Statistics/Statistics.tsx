@@ -117,24 +117,21 @@ const Statistics = () => {
   return (
     <div className="w-full h-full py-[18px]">
       <div
-        className={`${
-          !solves.length ? "flex" : "hidden"
-        } w-full h-full justify-center items-center text-[#80808080] text-[4em] overflow-hidden`}
+        className={`${!solves.length ? "flex" : "hidden"
+          } w-full h-full justify-center items-center text-[#80808080] text-[4em] overflow-hidden`}
       >
         NO SOLVES
       </div>
       <div
-        className={`${
-          solves.length ? "flex" : "hidden"
-        } w-full h-full flex justify-center overflow-y-scroll`}
+        className={`${solves.length ? "flex" : "hidden"
+          } w-full h-full flex justify-center overflow-y-scroll`}
       >
         <div className="w-full max-w-xl flex flex-col items-center gap-[18px]">
           {solveCollections.map((collection, index) => (
             <div
               key={index}
-              className={`${
-                isMobile ? "w-[288px]" : "w-[340px]"
-              } flex flex-col`}
+              className={`${isMobile ? "w-[288px]" : "w-[340px]"
+                } flex flex-col`}
             >
               <p className="px-2 font-bold">{collection.label}</p>
               <span className="flex flex-row justify-between px-2 font-semibold">
