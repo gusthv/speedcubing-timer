@@ -83,7 +83,7 @@ const App: FC = () => {
           !darkMode
             ? "bg-[#FFFFFF] text-[#000000]"
             : "bg-[#242526] text-[#FFFFFF]"
-        } ${isMobile ? "overflow-y-hidden select-none" : ""}`}
+        } ${isMobile ? "jetbrains-mono overflow-y-hidden select-none" : ""}`}
       >
         <Router>
           <div className={`${navbar && !isFast ? "flex" : "hidden"} h-[60px]`}>
