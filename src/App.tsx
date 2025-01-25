@@ -50,7 +50,11 @@ const App: FC = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    if (navigator.userAgent.includes("Android" || "iPhone" || "iPad")) {
+    if (
+      navigator.userAgent.includes("iPhone") ||
+      navigator.userAgent.includes("Android") ||
+      navigator.userAgent.includes("iPad")
+    ) {
       setIsMobile(true);
     }
   });

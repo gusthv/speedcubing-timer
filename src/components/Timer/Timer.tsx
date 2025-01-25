@@ -674,7 +674,7 @@ const Timer = () => {
         onTouchEnd={() => process_touchend("touchend")}
         className={`${
           isMobile ? "flex" : "hidden"
-        } w-screen h-screen fixed select-none cursor-pointer z-30`}
+        } w-screen h-screen fixed select-none cursor-pointer z-10`}
       />
     </div>
   );
