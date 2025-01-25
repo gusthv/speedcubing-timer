@@ -292,11 +292,13 @@ const Timer = () => {
     <div className="w-full h-full flex justify-center items-center">
       <video
         autoPlay
+        playsInline
         loop
         muted
-        className={`${
-          nowFast && isFast ? "absolute" : "hidden"
-        } top-0 left-0 w-full h-full object-cover`}
+        preload="auto"
+        className={`absolute top-0 left-0 w-full h-full object-cover ${
+          nowFast && isFast ? "" : "hidden"
+        }`}
         src={selectedVideo}
       />
       <section className="fixed">
