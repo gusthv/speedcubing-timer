@@ -3,7 +3,8 @@ import { Scramble, Time } from "../../components";
 import { Context } from "../../App";
 
 const Timer = () => {
-  const { navbar, setNavbar, darkMode, isMobile } = useContext(Context);
+  const { navbar, setNavbar, darkMode, isMobile, isFast, setIsFast } =
+    useContext(Context);
 
   const [toggleScramble, setToggleScramble] = useState<boolean>(() => {
     const storedToggleScramble = localStorage.getItem("toggleScramble");
@@ -14,6 +15,10 @@ const Timer = () => {
   const [toggleColor, setToggleColor] = useState<boolean>(() => {
     const storedToggleColor = localStorage.getItem("toggleColor");
     return storedToggleColor !== null ? JSON.parse(storedToggleColor) : false;
+  });
+  const [nowFast, setNowFast] = useState<boolean>(() => {
+    const storedNowFast = localStorage.getItem("nowFast");
+    return storedNowFast !== null ? JSON.parse(storedNowFast) : false;
   });
 
   const [step, setStep] = useState<number>(0);
@@ -148,6 +153,11 @@ const Timer = () => {
         setStep(0);
         break;
     }
+    if (step == 2 && nowFast) {
+      setIsFast(true);
+    } else {
+      setIsFast(false);
+    }
   }, [step]);
 
   const generateNewScramble = () => {
@@ -272,8 +282,23 @@ const Timer = () => {
     }
   }, [solves]);
 
+  const selectedVideo = "/speed.mp4";
+
+  useEffect(() => {
+    localStorage.setItem("nowFast", JSON.stringify(nowFast));
+  }, [nowFast]);
+
   return (
     <div className="w-full h-full flex justify-center items-center">
+      <video
+        autoPlay
+        loop
+        muted
+        className={`${
+          isFast ? "absolute" : "hidden"
+        } top-0 left-0 w-full h-full object-cover`}
+        src={selectedVideo}
+      />
       <section className="fixed">
         <div
           className={`${
@@ -542,7 +567,7 @@ const Timer = () => {
           </div>
         </div>
       </section>
-      <span className="z-40">
+      <span className={`${isFast ? "hidden" : ""} z-40`}>
         <svg
           onClick={() => setNavbar(!navbar)}
           className={`w-6 h-6 absolute ${
@@ -635,6 +660,14 @@ const Timer = () => {
             stroke={!toggleColor ? "" : "#373737"}
           />
         </svg>
+        <span
+          className={`w-6 h-6 fixed flex items-center justify-center ${
+            navbar ? "top-[216px]" : "top-[168px]"
+          } right-[24px] text-2xl leading-none cursor-pointer`}
+          onClick={() => setNowFast(!nowFast)}
+        >
+          {nowFast ? "🚀" : "🐌"}
+        </span>
       </span>
       <div
         onTouchStart={() => process_touchstart("touchstart")}

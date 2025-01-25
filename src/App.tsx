@@ -16,6 +16,8 @@ type ContextType = {
   setDarkMode: Dispatch<SetStateAction<boolean>>;
   isMobile: boolean;
   setIsMobile: Dispatch<SetStateAction<boolean>>;
+  isFast: boolean;
+  setIsFast: Dispatch<SetStateAction<boolean>>;
 };
 
 export const Context = createContext<ContextType>({
@@ -25,6 +27,8 @@ export const Context = createContext<ContextType>({
   setDarkMode: () => {},
   isMobile: false,
   setIsMobile: () => {},
+  isFast: false,
+  setIsFast: () => {},
 });
 
 const App: FC = () => {
@@ -38,6 +42,11 @@ const App: FC = () => {
       ? JSON.parse(localStorage.getItem("darkMode")!)
       : true
   );
+  const [isFast, setIsFast] = useState(
+    localStorage.getItem("isFast") !== null
+      ? JSON.parse(localStorage.getItem("isFast")!)
+      : false
+  );
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -49,7 +58,8 @@ const App: FC = () => {
   useEffect(() => {
     localStorage.setItem("navbar", JSON.stringify(navbar));
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
-  }, [darkMode, navbar]);
+    localStorage.setItem("isFast", JSON.stringify(isFast));
+  }, [darkMode, navbar, isFast]);
 
   return (
     <Context.Provider
@@ -60,6 +70,8 @@ const App: FC = () => {
         setNavbar,
         isMobile,
         setIsMobile,
+        isFast,
+        setIsFast,
       }}
     >
       <div
@@ -70,7 +82,7 @@ const App: FC = () => {
         }`}
       >
         <Router>
-          <div className={`${navbar ? "flex" : "hidden"} h-[60px]`}>
+          <div className={`${navbar && !isFast ? "flex" : "hidden"} h-[60px]`}>
             <Navbar />
           </div>
           <div
