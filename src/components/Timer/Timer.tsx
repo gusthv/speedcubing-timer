@@ -295,7 +295,7 @@ const Timer = () => {
         loop
         muted
         className={`${
-          isFast ? "absolute" : "hidden"
+          nowFast && isFast ? "absolute" : "hidden"
         } top-0 left-0 w-full h-full object-cover`}
         src={selectedVideo}
       />
@@ -312,7 +312,11 @@ const Timer = () => {
           >
             0.00
           </p>
-          <p className={`${!threshold ? "visible" : "hidden"} text-[144px]`}>
+          <p
+            className={`${!threshold ? "visible" : "hidden"} text-[144px] ${
+              isMobile && nowFast ? "text-[#FFFFFF]" : ""
+            }`}
+          >
             <Time value={time} />
           </p>
         </div>
