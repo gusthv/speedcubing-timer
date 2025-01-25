@@ -18,6 +18,8 @@ type ContextType = {
   setIsMobile: Dispatch<SetStateAction<boolean>>;
   isFast: boolean;
   setIsFast: Dispatch<SetStateAction<boolean>>;
+  showItems: boolean;
+  setShowItems: Dispatch<SetStateAction<boolean>>;
 };
 
 export const Context = createContext<ContextType>({
@@ -29,6 +31,8 @@ export const Context = createContext<ContextType>({
   setIsMobile: () => {},
   isFast: false,
   setIsFast: () => {},
+  showItems: false,
+  setShowItems: () => {},
 });
 
 const App: FC = () => {
@@ -48,6 +52,7 @@ const App: FC = () => {
       : false
   );
   const [isMobile, setIsMobile] = useState(false);
+  const [showItems, setShowItems] = useState(true);
 
   useEffect(() => {
     if (
@@ -76,6 +81,8 @@ const App: FC = () => {
         setIsMobile,
         isFast,
         setIsFast,
+        showItems,
+        setShowItems,
       }}
     >
       <div
@@ -86,7 +93,9 @@ const App: FC = () => {
         } ${isMobile ? "overflow-y-hidden select-none" : ""}`}
       >
         <Router>
-          <div className={`${navbar && !isFast ? "flex" : "hidden"} h-[60px]`}>
+          <div
+            className={`${navbar && showItems ? "flex" : "hidden"} h-[60px]`}
+          >
             <Navbar />
           </div>
           <div

@@ -3,8 +3,16 @@ import { Scramble, Time } from "../../components";
 import { Context } from "../../App";
 
 const Timer = () => {
-  const { navbar, setNavbar, darkMode, isMobile, isFast, setIsFast } =
-    useContext(Context);
+  const {
+    navbar,
+    setNavbar,
+    darkMode,
+    isMobile,
+    isFast,
+    setIsFast,
+    showItems,
+    setShowItems,
+  } = useContext(Context);
 
   const [toggleScramble, setToggleScramble] = useState<boolean>(() => {
     const storedToggleScramble = localStorage.getItem("toggleScramble");
@@ -137,10 +145,12 @@ const Timer = () => {
         break;
       case 2:
         setThreshold(false);
+        setShowItems(false);
         startTimer();
         break;
       case 3:
         stopTimer();
+        setShowItems(true);
         setPreviousTime(time);
         setSolves((solves: number[]) => [...solves, time!]);
         setScrambles((scrambles: string[]) => [...scrambles, scramble]);
@@ -297,7 +307,7 @@ const Timer = () => {
         muted
         preload="auto"
         className={`absolute top-0 left-0 w-full h-full object-cover ${
-          nowFast && isFast ? "" : "hidden"
+          isFast ? "" : "hidden"
         }`}
         src={selectedVideo}
       />
@@ -315,9 +325,9 @@ const Timer = () => {
             0.00
           </p>
           <p
-            className={`${!threshold ? "visible" : "hidden"} text-[144px] ${
-              nowFast ? "text-[#FFFFFF]" : ""
-            }`}
+            className={`${!threshold ? "visible" : "hidden"} ${
+              isMobile ? "text-[104px]" : "text-[144px]"
+            } ${nowFast ? "text-[#FFFFFF]" : ""}`}
           >
             <Time value={time} />
           </p>
@@ -384,9 +394,9 @@ const Timer = () => {
               })()}
             </div>
             <div
-              className={`${threshold || step === 2 ? "hidden" : "visible"} ${
-                isMobile ? "text-[84px]" : "text-[104px]"
-              }`}
+              className={`${
+                threshold || step === 2 ? "hidden" : "visible"
+              } text-[104px]`}
             >
               <p
                 className={`${
@@ -414,11 +424,7 @@ const Timer = () => {
                 </p>
               </div>
             </div>
-            <div
-              className={`${threshold ? "visible" : "hidden"} ${
-                isMobile ? "text-[84px]" : "text-[104px]"
-              }`}
-            >
+            <div className={`${threshold ? "visible" : "hidden"} text-[104px]`}>
               <p className={`${step === 2 ? "visible" : "hidden"}`}>
                 <Time value={time} />
               </p>
@@ -583,7 +589,7 @@ const Timer = () => {
           </div>
         </div>
       </section>
-      <span className={`${isFast ? "hidden" : ""} z-40`}>
+      <span className={`${showItems == false ? "hidden" : ""} z-40`}>
         <svg
           onClick={() => setNavbar(!navbar)}
           className={`w-6 h-6 absolute ${
