@@ -20,6 +20,10 @@ const Solves: React.FC = () => {
   const [scrambles, setScrambles] = useState<string[]>(
     JSON.parse(localStorage.getItem("scrambles") as string) || []
   );
+  const [toggleColor] = useState<boolean>(() => {
+    const storedToggleColor = localStorage.getItem("toggleColor");
+    return storedToggleColor !== null ? JSON.parse(storedToggleColor) : false;
+  });
 
   const clearLocal = () => {
     localStorage.removeItem("solves");
@@ -77,13 +81,39 @@ const Solves: React.FC = () => {
           <Time value={solve} />
         </p>
       </span>
-      <p
-        className={`flex items-center text-[#808080] ${
+      <div
+        className={`flex flex-wrap justify-center items-center mx-auto gap-x-1 text-[#808080] font-semibold test-center ${
           isMobile ? "scaling-text" : ""
-        } font-semibold`}
+        } ${!darkMode && !toggleColor ? "text-stroke" : ""}`}
       >
-        {scramble}
-      </p>
+        {scramble.split(" ").map((rotation, index) => {
+          return (
+            <span
+              key={index}
+              className={`${
+                toggleColor
+                  ? ""
+                  : rotation.charAt(0) === "L"
+                  ? "text-[#FFA500]"
+                  : rotation.charAt(0) === "R"
+                  ? "text-[#F22E2E]"
+                  : rotation.charAt(0) === "F"
+                  ? "text-[#00FF00]"
+                  : rotation.charAt(0) === "B"
+                  ? "text-[#1583FF]"
+                  : rotation.charAt(0) === "U"
+                  ? "text-[#FFFFFF]"
+                  : rotation.charAt(0) === "D"
+                  ? "text-[#FFFF00]"
+                  : ""
+              }`}
+            >
+              {rotation}
+            </span>
+          );
+        })}
+      </div>
+      {/* {scramble} */}
     </span>
   );
 

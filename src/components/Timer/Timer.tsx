@@ -310,13 +310,13 @@ const Timer = () => {
           <p
             className={`${
               threshold ? "visible" : "hidden"
-            } text-[#00FF00] text-[104px]`}
+            } text-[#00FF00] text-[104px] jetbrains-mono`}
           >
             0.00
           </p>
           <p
             className={`${!threshold ? "visible" : "hidden"} text-[144px] ${
-              isMobile && nowFast ? "text-[#FFFFFF]" : ""
+              nowFast ? "text-[#FFFFFF]" : ""
             }`}
           >
             <Time value={time} />
@@ -379,7 +379,7 @@ const Timer = () => {
                     </div>
                   );
                 } else {
-                  return <div>0.00</div>;
+                  return <div className="jetbrains-mono">0.00</div>;
                 }
               })()}
             </div>
@@ -391,7 +391,7 @@ const Timer = () => {
               <p
                 className={`${
                   step === 1 ? "visible" : "hidden"
-                } text-[#F22E2E]`}
+                } text-[#F22E2E] jetbrains-mono`}
               >
                 0.00
               </p>
@@ -405,7 +405,13 @@ const Timer = () => {
                     }
                   />
                 </p>
-                <p className={`${previousTime ? "hidden" : "visible"}`}>0.00</p>
+                <p
+                  className={`${
+                    previousTime ? "hidden" : "visible"
+                  } jetbrains-mono`}
+                >
+                  0.00
+                </p>
               </div>
             </div>
             <div className={`${threshold ? "visible" : "hidden"} text-[104px]`}>
@@ -415,7 +421,7 @@ const Timer = () => {
               <p
                 className={`${
                   step === 2 ? "hidden" : "visible"
-                } text-[#00FF00]`}
+                } text-[#00FF00] jetbrains-mono`}
               >
                 0.00
               </p>
