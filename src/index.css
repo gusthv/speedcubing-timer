@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 .jetbrains-mono {
-  font-family: "Josefin Slab", serif;
+  font-family: "JetBrains Mono", serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
